@@ -1,0 +1,81 @@
+<div class="container-ng">
+   <button class="btn btn-dark" routerLink="/bookedhistory">Booked Room</button>
+   <button class="btn btn-dark" routerLink="/ownerapproval">Pending</button>
+   <div class="row">
+      <div class="col">
+         <!--  -->
+         <div class="crud-buttons">
+            <span class="property-list">
+               <a style="cursor: pointer;text-decoration: none;" routerLink="/addproperty"><i class="fa fa-plus" style="margin-right: 0px;"></i><span id="add-property">Add Property</span></a>
+            
+               <!-- <a style="cursor: pointer;text-decoration: none;" routerLink="/editproperty"><i class="fa fa-minus" style="margin-right: 0px;"></i><span id="add-property">Add Property</span></a> -->
+            </span>
+         </div>
+
+         <div class="property-list-display">
+            <span *ngFor="let pro of property;let indexOfelement=index;">
+               <div class="property-list">
+                  <div class="row">
+                     <div class="col-3 property-image-sizer" style="width: 20rem;">
+                        <img src="../../assets/IMG0{{indexOfelement}}1.jpg"  alt="">
+                     </div>
+                     <div class="col">
+                        <div class="property-content" style="width: 30rem;">
+                           <h3 style="margin-bottom: 0px;">{{pro.property_name}}</h3>
+                           <p style="margin-bottom: 3px; text-transform: capitalize;">{{pro.location}}</p>
+                           <i class="fa fa-star" style="font-size: 18px;color: red;margin: 0;">&nbsp;{{pro.ratings}}</i>
+                           <span class="property-features">
+                              <ul>
+                                 <li>Size &nbsp;: {{pro.room_size}} sq.ft</li>
+                                 <li>Rooms : {{pro.rooms}}</li>
+                              </ul>
+                           </span>
+                           <div class="col-12">
+                              <span style="font-size: larger;font-weight: bold;">Price :</span><span style="font-size:x-large;color: red;">{{pro.price}}</span><span>/per night</span>
+                           </div>
+                        </div>
+                     </div>
+                     <hr id="hr-responsive" style="display: none;">
+                     <div class="col-2 center">
+                        <div class="row">
+                           <div class="col-12">
+                              <a routerLink="/moreinfo" (click)="getMoreInfo(pro)"><input type="submit" style="background-color: black" value="View More"></a>
+                           </div>
+                           <div class="col-12">
+                              <a><input type="submit" (click)="edit(pro)" style="background-color: green" value="Edit"></a>
+                           </div>
+                           <div class="col-12">
+                              <input type="submit" (click)="deleteProperty(pro)" value="Delete">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </span>
+         </div>
+
+
+         <!--  -->
+      </div>
+      <div class="col-3">
+         <div class="row">
+            <div class="col">
+               <div id="cards">
+                  <span id="tilte-name">Rooms</span><span id="tilte-name-count">#{{total_room}}</span>
+               </div>              
+            </div>
+            <div class="col">
+               <div id="cards">
+                  <span id="place-name">Places</span><span id="place-name-count">#9</span>
+               </div> 
+            </div>
+         </div>
+         <div class="graph-plot-slider">
+            h
+         </div>
+         <div class="revenue-picker">
+            <span id="place-name-count" style="font-size: xx-large; font-weight: bold;">Revenue</span><span style="color: red;font-size: large;font-weight:bold;">$1206M</span>
+         </div>
+      </div>
+   </div>
+</div>

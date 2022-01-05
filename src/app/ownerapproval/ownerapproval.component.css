@@ -1,0 +1,89 @@
+.user-details{
+   border: 1px solid rgb(66, 66, 66);
+   padding: 2%;
+}
+.user-info{
+   font-size: larger;
+}
+.property-content{
+   width: 100% !important;
+}
+.property-content h3{
+   color: #868686;
+}
+.property-image-sizer img{
+   width: 19rem;
+   height: 30vh;
+}
+
+@media only screen and (max-width:412px)
+{
+   .property-content{
+      width: 20rem !important;
+   }
+   .input-number{
+      margin: 2% 3%;
+   }
+   .p-field.p-col-12.p-md-4{
+      width: 260px;
+   }
+   .col-2{
+      margin: 5% 0;
+      width: 100%;
+      display: block;
+   }
+   #price-details{
+      margin: 2% 0;
+   }
+   #hr-responsive{
+      display: block !important;
+      margin: 5% 2% 1% 5%;
+      width: 86%;
+   }
+   .property-list{
+      border: 1px solid red;
+      padding-left: 5%;
+      padding-top: 2%;
+      
+   }
+}
+@media only screen and (max-width:320px)
+{
+   .property-image-sizer img{
+      width: 17rem !important;
+   }
+   .property-list{
+      padding-left: 4%;
+      padding-top: 2%;
+   }
+   #hr-responsive{
+      margin: 5% 2% 1% 5%;
+      width: 76%;
+   }
+   .col-3{
+      width: 100% !important;
+   }
+   .property-content{
+      width: 100% !important;
+   }
+}
+@media only screen and (max-width:280px)
+{
+   .property-image-sizer img{
+      width: 14rem !important;
+   }  
+}
+.property-awesome{
+   position: relative;
+}
+.fontawesome-icon{
+   position:absolute;
+   z-index: 2;
+   top: -30px;
+   height: 10px;
+}
+#fontawesome-icon-liner{
+   background-color: #ffffff;
+   padding: 2px 10px;
+   border: 1px solid #868686;
+}

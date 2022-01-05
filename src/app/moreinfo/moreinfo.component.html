@@ -1,0 +1,146 @@
+<div id="bg-slider">
+   <div class="container">
+      <div class="moreinfo-content">
+         <div class="info-setter">
+            <a routerLink="/room"><i class="fa fa-arrow-left"></i></a>
+            <span id="room-title">{{property.property_name}}</span><hr>
+            <div class="row">
+               <div class="col">
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                     <div class="carousel-indicators">
+                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                     </div>
+                     <div class="carousel-inner">
+                       <div class="carousel-item active">
+                         <img src="../../assets/IMG011.jpg" class="d-block w-100" alt="...">
+                       </div>
+                       <div class="carousel-item">
+                         <img src="../../assets/IMG012.jpg" class="d-block w-100" alt="...">
+                       </div>
+                       <div class="carousel-item">
+                         <img src="../../assets/IMG013.jpg" class="d-block w-100" alt="...">
+                       </div>
+                       <div class="carousel-item">
+                        <img src="../../assets/IMG014.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="../../assets/IMG015.jpg" class="d-block w-100" alt="...">
+                      </div>
+                     </div>
+                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                       <span class="visually-hidden">Previous</span>
+                     </button>
+                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                       <span class="visually-hidden">Next</span>
+                     </button>
+                   </div>
+
+                   <table>
+                      <div id="table-slider">
+                        <tr>
+                           <td id="table-head">Properties :</td>
+                           <td id="table-body">
+                              <div class="row">
+                                 <div class="col-6">Room : {{property.rooms}}</div>
+                                 <div class="col-6">Beds : {{property.beds}} Double(s)</div>
+                                 <div class="col-6">Size : {{property.room_size}} sq.ft</div>
+                              </div>
+                           </td>
+                         </tr>
+                      </div>
+                      <div id="table-slider">
+                        <tr>
+                           <td id="table-head">More Info :</td>
+                           <td id="table-body">
+                              <p style="text-align: justify;">{{property.more_info}}</p>
+                           </td>
+                         </tr>
+                      </div>
+                      <div id="table-slider">
+                        <tr>
+                           <td id="table-head">Amenities :</td>
+                           <td id="table-body">
+                              <div class="row">
+                                 <div class="col-6"><i class="fa fa-snowflake-o"><p id="amenities-list">A/C</p></i></div>
+                                 <div class="col-6"><i class="fa fa-wifi"><p id="amenities-list">Wi-Fi</p></i></div>
+                                 <div class="col-6"><i class="fa fa-television"><p id="amenities-list">TV</p></i></div>
+                                 <div class="col-6"><i class="fa fa-phone"><p id="amenities-list">Phone</p></i></div>
+                                 <div class="col-6"><i class="fa fa-shower"><p id="amenities-list">Shower</p></i></div>
+                                 <div class="col-6"><i class="fa fa-bed"><p id="amenities-list">Bed</p></i></div>
+                                 <div class="col-6"><i class="fa fa-bath"><p id="amenities-list">Bathroom</p></i></div>
+                                 <div class="col-6"><i class="fa fa-cutlery"><p id="amenities-list">Kitchen</p></i></div>
+                                 <div class="col-6"><i class="fa fa-glass"><p id="amenities-list">Party</p></i></div>
+                              </div>
+                           </td>
+                         </tr>
+                      </div>
+                      <div id="table-slider">
+                        <tr>
+                           <td id="table-head">Terms :</td>
+                           <td id="table-body">
+                              <a>Read our Policies</a>
+                           </td>
+                         </tr>
+                      </div>
+                   </table>
+               </div>
+               <div class="col-3">
+                  <div class="row">
+                     <div class="col-12 center">
+                        <div>From</div><div id="price-details"><span style="font-size:xx-large;color: #868686;">{{property.price}}</span><span style="color: red;">/per night</span></div>
+                     </div>
+                  </div><hr>
+                  <div class="activity">
+                     <div class="calander input-number">
+                        <label style="color: rgb(80, 80, 80); font-weight: bold;">Check-In</label>
+                        <input type="date" style="width: 100%;padding: 5px;" [(ngModel)]="datefrom" name="datefrom">
+                     </div>
+                     <div class="calander input-number">
+                        <label style="color: rgb(80, 80, 80); font-weight: bold;">Check-Out</label>
+                        <input type="date" style="width: 100%;padding: 5px;" [(ngModel)]="datefrom1" name="datefrom1">
+                     </div>
+                     <div class="calander input-number">
+                        <label style="color: rgb(80, 80, 80); font-weight: bold;">Room</label>
+                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 Room" [(ngModel)]="room" name="room">
+                     </div>
+                     <!-- <div class="calander input-number">
+                        <label style="color: rgb(80, 80, 80); font-weight: bold;">Guest</label>
+                        <input type="number" class="form-control" id="inputPassword2" placeholder="0 Guest" [(ngModel)]="guest" name="guest">
+                     </div> -->
+                     <div style="background-color: #e4e4e4;padding: 2%;" *ngIf="total_amount>0">
+                        <div class="row">
+                           <div class="col-6">Night(s) * {{totalDays}}</div>
+                           <div class="col-5">{{sum}}</div>
+                           <div class="col-6">Tax (28%)</div>
+                           <div class="col-5">{{tax}}</div>
+                           <hr style="margin: 2% 5%; width: 90%;">
+                           <div class="col-6"style="font-weight: bold;color: green;">Total</div>
+                           <div class="col-5"style="font-weight: bold;color: green;">{{total_amount}}</div>
+                        </div>
+                        <div class="calander input-number center">
+                           <input type="submit" (click)="confirm()" value="Confirm">
+                        </div>
+                     </div>
+                     <span class="nav-item" *ngIf='!isLogIn()'>
+                        <div class="calander input-number center">
+                           <input type="submit" (click)="book()" value="Book Now">
+                        </div>
+                     </span>
+                     <span class="nav-item" *ngIf='!isNotLogIn()'>
+                        <div class="calander input-number center">
+                           <input type="submit" routerLink='/login' value="Login to Book">
+                        </div>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

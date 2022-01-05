@@ -1,0 +1,38 @@
+<div class="container">
+   <h1 style="margin: 2% 0;color: rgb(163, 163, 163);">Our History</h1>
+   <span *ngFor="let pro of property;let indexOfelement=index;">
+      <div class="property-list">
+         <div class="user-details">
+            <div class="user-info">
+               <div class="row">
+                  <div class="col"><b>Name :</b>{{pro.user_name}}</div>
+                  <div class="col"><b>Email :</b>{{pro.user_email}}</div>
+                  <div class="col"><b>Phone :</b>{{pro.user_phone}}</div>
+               </div>
+            </div>
+            <hr>
+            <div class="row">
+               <div class="col-3 property-image-sizer" style="width: 20rem;">
+                  <img src="../../assets/IMG0{{indexOfelement}}1.jpg"  alt="">
+               </div>
+               <div class="col">
+                  <div class="property-content" style="width: 30rem;">
+                     <h3 style="margin-bottom: 0px;">{{pro.room_name}}</h3>
+                     <p style="margin-bottom: 3px; text-transform: capitalize;">{{pro.room_type}}</p>
+                     <p style="margin-bottom: 3px; text-transform: capitalize;">{{pro.property_address}}</p>
+                     <i class="fa fa-star" style="font-size: 18px;color: red;margin: 0;">Total :&nbsp;{{pro.total}}</i>
+                     <span class="property-features">
+                        <ul>
+                           <li>Date From : {{pro.date_from}} sq.ft</li>
+                           <li>Due Date &nbsp;: {{pro.due_date}}</li>
+                           <li>No. of Night : {{pro.no_of_nights}} sq.ft</li>
+                           <li>No. of Room &nbsp;: {{pro.no_of_rooms}}</li>
+                        </ul>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </span>
+</div>

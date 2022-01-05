@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container">
+     <a class="navbar-brand" href="#">Haven Life</a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarResponsive">
+       <ul class="navbar-nav float-right ms-auto">
+        <!-- <li class="nav-item" *ngIf='!isNotLogIn()'>
+          <a routerLink='/adminlogin' class="white nav-link">Admin Login</a>
+       </li> -->
+       <li class="nav-item" *ngIf='!isNotLogIn()'>
+          <a routerLink='/adminlogin' class="white nav-link">Owner</a>
+       </li>
+         <li class="nav-item" *ngIf='!isNotLogIn()'>
+            <a routerLink='/login' class="white nav-link">Login</a>
+         </li>
+         <li class="nav-item" *ngIf='!isNotLogIn()'>
+            <a routerLink='/register' class="white nav-link">Register</a>
+         </li>
+         <!-- <li class="nav-item" *ngIf='!isLogIn()'>
+            <a (click)="logout()" style="cursor: pointer;" class="white nav-link">Logout</a>
+         </li> -->
+         <li class="nav-item" *ngIf='!isLogIn()'>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-user-circle-o" style="font-size: x-large;"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" >{{email}}</a></li>
+                  <li><a class="dropdown-item" routerLink="/">Home</a></li>
+                  <li><a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </nav>

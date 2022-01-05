@@ -1,0 +1,149 @@
+<div id='background'>
+   <div class='container'>
+       <div class='col-lg-4 col-md-8 col-sm-10 col-12 mx-lg-auto mx-md-auto mx-sm-auto mx-auto'>
+           <div class='form_data'>
+               <div class='col-lg-11 col-md-11 col-sm-11 col-12 mx-lg-auto mx-md-auto mx-sm-auto mx-auto'>
+                   <div class='form_title mb-4'>
+                       <h2 class='text-white'>Register</h2>
+                   </div>
+                   <div *ngIf='isError' style="color: white;font-size: 1.2rem;">
+                       {{errMessage}}
+                   </div>
+                   <form #userform='ngForm' (ngSubmit)='register()'>
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="text" class="form-control" [(ngModel)]='user.firstname' id="floatingInput"
+                               placeholder="First name" [class.error]='fname.invalid && fname.touched' name='firstname'
+                               #fname='ngModel' required minlength="2">
+                           <label for="floatingInput" class='label-color'>First name</label>
+                       </div>
+                       <div *ngIf='fname.touched'>
+                           <div *ngIf='fname.errors && fname.invalid'>
+                               <small class='text-danger' *ngIf="fname.errors?.['required']">
+                                   First name is required.
+                               </small>
+                               <small class='text-danger' *ngIf="fname.errors?.['minlength']">
+                                   First name should be of minimum 2 characters.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="text" class="form-control" [(ngModel)]='user.lastname' id="floatingInput"
+                               placeholder="Last name" [class.error]='lname.invalid && lname.touched' name='lastname'
+                               #lname='ngModel' required minlength="2">
+                           <label for="floatingInput" class='label-color'>Last name</label>
+                       </div>
+                       <div *ngIf='lname.touched'>
+                           <div *ngIf='lname.errors && lname.invalid'>
+                               <small class='text-danger' *ngIf="lname.errors?.['required']">
+                                   Last name is required.
+                               </small>
+                               <small class='text-danger' *ngIf="lname.errors?.['minlength']">
+                                   Last name should be of minimum 2 characters.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="text" class="form-control" [(ngModel)]='user.email' id="floatingInput"
+                               placeholder="name@example.com" [class.error]='uemail.invalid && uemail.touched'
+                               name='email' #uemail='ngModel' required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$">
+                           <label for="floatingInput" class='label-color'>Email address</label>
+                       </div>
+                       <div *ngIf='uemail.touched'>
+                           <div *ngIf='uemail.errors && uemail.invalid'>
+                               <small class='text-danger' *ngIf="uemail.errors?.['required']">
+                                   Email is required.
+                               </small>
+                               <small class='text-danger' *ngIf="uemail.errors?.['pattern']">
+                                   Please enter a valid email address.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="text" class="form-control" [(ngModel)]='user.phone' id="floatingInput"
+                               placeholder="Phone number" [class.error]='phoneno.invalid && phoneno.touched'
+                               name='phone' #phoneno='ngModel' required pattern="^[0-9]+$">
+                           <label for="floatingInput" class='label-color'>Phone number</label>
+                       </div>
+                       <div *ngIf='phoneno.touched'>
+                           <div *ngIf='phoneno.errors && phoneno.invalid'>
+                               <small class='text-danger' *ngIf="phoneno.errors?.['required']">
+                                   Phone number is required.
+                               </small>
+                               <small class='text-danger' *ngIf="phoneno.errors?.['pattern']">
+                                   Phone number must contain only numbers.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="text" class="form-control" [(ngModel)]='user.address' id="floatingInput"
+                               placeholder="Address" [class.error]='addr.invalid && addr.touched' name='address'
+                               #addr='ngModel' required minlength="6">
+                           <label for="floatingInput" class='label-color'>Address</label>
+                       </div>
+                       <div *ngIf='addr.touched'>
+                           <div *ngIf='addr.errors && addr.invalid'>
+                               <small class='text-danger' *ngIf="addr.errors?.['required']">
+                                   Address is required.
+                               </small>
+                               <small class='text-danger' *ngIf="addr.errors?.['minlength']">
+                                   Address should be of minimum 6 characters.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="password" class="form-control" [(ngModel)]='user.password' id="floatingPassword"
+                               placeholder="Password" [class.error]='upassword.invalid && upassword.touched'
+                               name='password' #upassword='ngModel' required
+                               pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'>
+                           <label for="floatingPassword" class='label-color'>Password</label>
+                       </div>
+                       <div *ngIf='upassword.touched'>
+                           <div *ngIf='upassword.errors && upassword.invalid'>
+                               <small class='text-danger' *ngIf="upassword.errors?.['required']">
+                                   Password is required
+                               </small>
+                               <small class='text-danger' *ngIf="upassword.errors?.['pattern']">
+                                   Your Password must contain minimum 8 characters including one uppercase letter, and
+                                   one number or special character.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class="form-floating mb-3 mt-0">
+                           <input type="password" class="form-control" [(ngModel)]='user.confirm_password'
+                               id="floatingPassword" placeholder="Confirm-password"
+                               [class.error]='cpassword.invalid && cpassword.touched' name='confirm_password'
+                               #cpassword='ngModel' required
+                               pattern='(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$'>
+                           <label for="floatingPassword" class='label-color'>Confirm-password</label>
+                       </div>
+                       <div *ngIf='cpassword.touched'>
+                           <div *ngIf='cpassword.errors && cpassword.invalid'>
+                               <small class='text-danger' *ngIf="cpassword.errors?.['required']">
+                                   Password is required
+                               </small>
+                               <small class='text-danger' *ngIf="cpassword.errors?.['pattern']">
+                                   Your Password must contain minimum 8 characters including one uppercase letter, and
+                                   one number or special character.
+                               </small>
+                           </div>
+                       </div>
+
+                       <div class='input-group mt-5 mb-1'>
+                           <input type="submit" name="submit" value="Register"
+                               class="form-control btn btn-primary theme-btn" [disabled]="userform.form?.['invalid']">
+                       </div>
+
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+
+
+</div>

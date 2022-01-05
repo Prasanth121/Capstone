@@ -1,0 +1,57 @@
+<div class="container">
+   <span *ngIf="total_count==0">
+      <div class="center">
+         <img src="../../assets/nodatafound.png" width="150" alt="">
+         <br>
+         <img src="../../assets/no_data_found.png" alt="">
+      </div>
+   </span>
+   <span *ngFor="let pro of property;let indexOfelement=index;">
+      <div class="property-list">
+         <div class="row">
+            <div class="col-3 property-image-sizer" style="width: 20rem;">
+               <img src="../../assets/IMG0{{indexOfelement}}1.jpg"  alt="">
+            </div>
+            <div class="col">
+               <div class="property-content" style="width: 30rem;">
+                  <h3 style="margin-bottom: 0px;">{{pro.property_name}}</h3>
+                  <p style="margin-bottom: 3px;">{{pro.location}}</p>
+                  <b style="color: green;">{{pro.property_type}}&nbsp;&nbsp;&nbsp;</b><i class="fa fa-star" style="font-size: 18px;color: red;margin: 0;">&nbsp;{{pro.ratings}}</i>
+                  <p>{{pro.property_line_content}}</p>
+                  <span class="property-features">
+                     <ul>
+                        <li>Size &nbsp;: {{pro.room_size}} sq.ft</li>
+                        <li>Rooms : {{pro.rooms}}</li>
+                     </ul>
+                  </span>
+                  <hr id="hr-responsive" style="margin: 5px;">
+                  <div class="property-awesome">
+                     <span class="fontawesome-icon"><p id="fontawesome-icon-liner">A/C</p></span>
+                     <i class="fa fa-wifi"></i>
+                     
+                     <i class="fa fa-television"></i>
+                     <i class="fa fa-phone"></i>
+                     <i class="fa fa-shower"></i>
+                     <i class="fa fa-snowflake-o"></i>
+                     <i class="fa fa-bed"></i>
+                     <i class="fa fa-bath"></i>
+                     <i class="fa fa-cutlery"></i>
+                     <i class="fa fa-glass"></i>
+                  </div>    
+               </div>
+            </div>
+            <hr id="hr-responsive" style="display: none;">
+            <div class="col-2 center">
+               <div class="row">
+                  <div class="col-12">
+                     <div>From</div><div id="price-details"><span style="font-size:xx-large;color: #868686;">{{pro.price}}</span><span style="color: red;">/per night</span></div>
+                  </div>
+                  <div class="col-12">
+                     <a routerLink="/moreinfo" (click)="getMoreInfo(pro)"><input type="submit" value="More Info"></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </span>
+</div>

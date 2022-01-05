@@ -1,0 +1,28 @@
+.container-width{
+   width: 60%;
+   margin-left: 20%;
+}
+.center{
+   text-align: center;
+}
+#mail-confirm-data{
+   padding: 2%;
+   border: 1px solid black;
+   width: 60%;
+   margin-left: 10%;
+   margin-top: 5%;
+   
+}
+.col-4{
+   padding: 2%;
+}
+.booked-slip{
+   border: 1px solid black;
+}
+img{
+   width: 100%;
+   height: 25vh;
+}
+#spacing{
+   margin-top: 2%;
+}

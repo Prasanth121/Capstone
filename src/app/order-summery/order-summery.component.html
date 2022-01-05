@@ -1,0 +1,63 @@
+<div class="container-width">
+   <h2 style="margin-top: 5%;">Congratulations!</h2>
+   <p>{{booked.user_name}}, your reservation was placed.</p>
+   <br><hr>
+   <div class="row">
+      <div class="col">
+         <p class="center" id="mail-confirm-data">
+            Once your reservation is confirmed, you will get an email.
+         </p>
+         <div class="row" style="margin: 2%;">
+            <div class="col-6">Check-In Time</div>
+            <div class="col-6">3:00 PM</div>
+            <div class="col-6">Check-Out Time</div>
+            <div class="col-6">12:00 PM</div>
+         </div>
+         <h5>Hotel Details</h5>
+         
+         <hr>
+         <div class="row">
+            <div class="col-3">Phone Number</div>
+            <div class="col-7">+91 {{booked.property_phone}}</div>
+            <div class="col-3">Email ID</div>
+            <div class="col-7">{{booked.property_email}}</div>
+            <div class="col-3">Address</div>
+            <div class="col-7">{{booked.property_address}}</div>
+         </div>
+      </div>
+      <div class="col-4">
+         <div class="booked-slip">
+            <div class="row">
+               <div class="col-12">
+                  <img src="../../assets/IMG015.jpg"alt="">
+               </div>
+            </div>
+            <div style="margin: 5%;">
+               <div class="row">
+               
+                  <div class="col-6" id="spacing">Room Name</div>
+                  <div class="col-6" id="spacing">{{booked.room_name}}</div>
+                  <div class="col-6" id="spacing">Room Type</div>
+                  <div class="col-6" id="spacing">{{booked.room_type}}</div>
+                  <div class="col-6" id="spacing">Date From</div>
+                  <div class="col-6" id="spacing">{{booked.date_from}}</div>
+                  <div class="col-6" id="spacing">Due Date</div>
+                  <div class="col-6" id="spacing">{{booked.due_date}}</div>
+                  <div class="col-6" id="spacing">No. of nights</div>
+                  <div class="col-6" id="spacing">{{booked.no_of_nights}}</div>
+                  <div class="col-6" id="spacing">Rooms</div>
+                  <div class="col-6" id="spacing">{{booked.no_of_rooms}}</div>
+                  <hr>
+                  <div class="col-6" id="spacing">Subtotal</div>
+                  <div class="col-6" id="spacing">{{booked.subtotal}}</div>
+                  <div class="col-6" id="spacing">Tax (28%)</div>
+                  <div class="col-6" id="spacing">{{booked.tax}}</div>
+                  <hr>
+                  <div class="col-6" id="spacing" style="font-weight: bold;">Total</div>
+                  <div class="col-6" id="spacing" style="font-weight: bold;">{{booked.total}}</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
